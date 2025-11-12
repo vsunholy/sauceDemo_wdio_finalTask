@@ -1,5 +1,5 @@
 const validUsers = [
-  'standard_user'
+  'standard_user','secret_sauce'
 ];
 
-export default validUsers;
+export { validUsers };

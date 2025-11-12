@@ -16,9 +16,9 @@ class LoginPage {
         await this.loginButton.click();
     }
 
-    clearInputs() {
-        this.usernameInput.clearValue();
-        this.passwordInput.clearValue()
+     async clearInputs() {
+        await this.usernameInput.clearValue();
+        await this.passwordInput.clearValue()
     }
 
     async clearCredentials() {

@@ -38,9 +38,9 @@ describe('SauceDemo Login Tests (UC-1, UC-2, UC-3)', () => {
         if (errorExists) {
             const errorMsg = await LoginPage.errorMessage.getText();
             expect(errorMsg).toBe('Epic sadface: Password is required');
-        } else { 
+        } else {
             console.log('element is missing');
-            
+
         }
 
     });

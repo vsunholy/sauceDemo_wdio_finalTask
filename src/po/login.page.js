@@ -1,4 +1,8 @@
 
+/**
+ * Login Page Object Model
+ * Contains all elements and actions for the SauceDemo login page
+ */
 class LoginPage {
 
     get usernameInput() { return $('//input[@id="user-name"]'); }

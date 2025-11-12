@@ -28,12 +28,6 @@
  * 3. Click on Login and validate the title in the dashboard
  */
 
-
-
-
-
-
-
 import { browser, expect } from '@wdio/globals';
 import { validUsers } from '../data/users.js';
 import LoginPage from '../po/login.page.js';

@@ -1,4 +1,7 @@
-
+/**
+ * Inventory Page Object Model
+ * Contains all elements and actions for the SauceDemo inventory page
+ */
 class InventoryPage {
   get headerTitle() { return $('//div[@class="app_logo" and text()="Swag Labs"]'); }
 

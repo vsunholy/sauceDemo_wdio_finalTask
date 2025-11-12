@@ -4,7 +4,7 @@ class InventoryPage {
 
   async isPageDisplayed() {
     try {
-      return await this.headerTitle.isDisplayed();
+      return await this.headerTitle.getText();
     } catch {
       return false;
     }

@@ -1,3 +1,39 @@
+/**
+ * UC-1: Test Login form with empty credentials
+ * 
+ * Steps:
+ * 1. Type any credentials into "Username" and "Password" fields
+ * 2. Clear the inputs
+ * 3. Hit the "Login" button
+ * 4. Check the error messages: "Epic sadface: Username and password do not match any user in this service
+ */
+
+/**
+ * UC-2: Test Login form with credentials by passing Username
+ * 
+ * Steps:
+ * 1. Type any credentials in username
+ * 2. Enter password
+ * 3. Clear the "Password" input
+ * 4. Hit the "Login" button
+ * 5. Check the error messages: "Epic sadface: Password is required"
+ */
+
+/**
+ * UC-3: Test Login form with credentials by passing Username & Password
+ * 
+ * Steps:
+ * 1. Type credentials in username which are under Accepted username sections
+ * 2. Enter password as "secret_sauce"
+ * 3. Click on Login and validate the title in the dashboard
+ */
+
+
+
+
+
+
+
 import { browser, expect } from '@wdio/globals';
 import { validUsers } from '../data/users.js';
 import LoginPage from '../po/login.page.js';
@@ -46,11 +82,11 @@ describe('SauceDemo Login Tests (UC-1, UC-2, UC-3)', () => {
     });
 
 
-    it('UC-3: Should login successfully with valid credentials', async () => {
+    it.only('UC-3: Should login successfully with valid credentials', async () => {
 
         await LoginPage.login(validUsers[0], validUsers[1]);
         const isInventoryPageDisplayed = await InventoryPage.isPageDisplayed();
-        expect(isInventoryPageDisplayed).toBe(true);
+        expect(isInventoryPageDisplayed).toBe('Swag Labs');
     });
 
 });

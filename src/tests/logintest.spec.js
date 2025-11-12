@@ -29,9 +29,9 @@
  */
 
 import { browser, expect } from '@wdio/globals';
-import { validUsers } from '../data/users.js';
-import LoginPage from '../po/login.page.js';
-import InventoryPage from '../po/inventory.page.js';
+import { LoginPage, InventoryPage } from '../po';
+import { validUsers } from '../data';
+
 
 
 describe('SauceDemo Login Tests (UC-1, UC-2, UC-3)', () => {
@@ -76,7 +76,7 @@ describe('SauceDemo Login Tests (UC-1, UC-2, UC-3)', () => {
     });
 
 
-    it.only('UC-3: Should login successfully with valid credentials', async () => {
+    it('UC-3: Should login successfully with valid credentials', async () => {
 
         await LoginPage.login(validUsers[0], validUsers[1]);
         const isInventoryPageDisplayed = await InventoryPage.isPageDisplayed();

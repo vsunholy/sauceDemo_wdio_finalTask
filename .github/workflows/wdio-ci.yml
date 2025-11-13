@@ -25,7 +25,7 @@ jobs:
         run: npm ci
 
       - name: Run tests (Chrome + Edge headless)
-        run: npx wdio run ./wdio.conf.js --spec ./src/** --headless
+        run: npx wdio run src/config/wdio.conf.js --spec ./src/** --headless
         
 
       - name: Upload Allure results

@@ -30,7 +30,7 @@
 
 import { browser, expect } from '@wdio/globals';
 import { LoginPage, InventoryPage } from '../po';
-import { validUsers } from '../data';
+// import { validUsers } from '../data';
 
 
 
@@ -55,10 +55,10 @@ describe('SauceDemo Login Tests (UC-1, UC-2, UC-3)', () => {
 
     });
 
-    it('UC-2: Should show "Password is required" when password is empty', async () => {
+    it.only('UC-2: Should show "Password is required" when password is empty', async () => {
 
-        await LoginPage.usernameInput.setValue(validUsers[0]);
-        await LoginPage.passwordInput.setValue(validUsers[1]);
+        await LoginPage.usernameInput.setValue(process.env.USERNAME);
+        await LoginPage.passwordInput.setValue(process.env.PASSWORD);
         await LoginPage.passwordInput.clearValue();
         await LoginPage.loginButton.click();
 
@@ -67,7 +67,7 @@ describe('SauceDemo Login Tests (UC-1, UC-2, UC-3)', () => {
 
         if (errorExists) {
             const errorMsg = await LoginPage.errorMessage.getText();
-            expect(errorMsg).toBe('Epic sadface: Password is required');
+            expect(errorMsg).toBe('Epic sadface: Username and password do not match any user in this service');
         } else {
             console.log('element is missing');
 

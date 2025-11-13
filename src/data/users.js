@@ -7,3 +7,5 @@ const validUsers = [
 ];
 
 export { validUsers };
+
+//discontinued due to adding .env for storing credentials

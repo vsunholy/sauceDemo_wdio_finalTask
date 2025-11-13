@@ -25,7 +25,7 @@
  * Steps:
  * 1. Type credentials in username which are under Accepted username sections
  * 2. Enter password as "secret_sauce"
- * 3. Click on Login and validate the title in the dashboard
+ * 3. Click on Login and validate the title(Swag Labs) in the dashboard
  */
 
 import { browser, expect } from '@wdio/globals';

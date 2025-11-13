@@ -25,6 +25,12 @@ class LoginPage {
         await this.usernameInput.clearValue();
         await this.passwordInput.clearValue();
     }
+    async clearPassword() {
+        await this.passwordInput.click();
+        await browser.keys(['Control', 'a']);
+        await browser.keys(['Backspace']);
+        await browser.keys(['Tab']);
+    }
     async getErrorMessage() {
         await this.errorMessage.waitForDisplayed({ timeout: 5000 });
         return this.errorMessage.getText();

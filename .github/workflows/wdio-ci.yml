@@ -11,13 +11,17 @@ on:
 jobs:
   e2e-tests:
     runs-on: ubuntu-latest
-    env: 
-      USERNAME: ${{ secrets.USERNAME }}
-      PASSWORD: ${{ secrets.PASSWORD }}
-      BASE_URL: ${{ secrets.BASE_URL }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+
+      - name: Create .env file
+        run: |
+          cat <<'EOF' > .env
+          USERNAME=${{ secrets.USERNAME }}
+          PASSWORD=${{ secrets.PASSWORD }}
+          BASE_URL=${{ secrets.BASE_URL }}
+          EOF
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -29,7 +33,7 @@ jobs:
         run: npm ci
 
       - name: Run tests (Chrome + Edge headless)
-        run: npx wdio run src/config/wdio.conf.js --spec ./src/** --headless
+        run: npx wdio run src/config/wdio.conf.js
         
 
       - name: Upload Allure results

@@ -7,6 +7,7 @@ class InventoryPage {
 
   async isPageDisplayed() {
     try {
+      await this.headerTitle.waitForDisplayed({ timeout: 5000 });
       return await this.headerTitle.getText();
     } catch {
       return false;

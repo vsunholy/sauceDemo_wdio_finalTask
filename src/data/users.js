@@ -8,4 +8,4 @@ const validUsers = [
 
 export { validUsers };
 
-//discontinued due to adding .env for storing credentials
+//discontinued due to adding .env for storing credentials.Left here for example.

@@ -55,7 +55,7 @@ describe('SauceDemo Login Tests (UC-1, UC-2, UC-3)', () => {
 
     });
 
-    it.only('UC-2: Should show "Password is required" when password is empty', async () => {
+    it('UC-2: Should show "Password is required" when password is empty', async () => {
 
         await LoginPage.usernameInput.setValue(process.env.USERNAME);
         await LoginPage.passwordInput.setValue(process.env.PASSWORD);

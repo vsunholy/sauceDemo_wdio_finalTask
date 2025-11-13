@@ -70,7 +70,6 @@ describe('SauceDemo Login Tests (UC-1, UC-2, UC-3)', () => {
             expect(errorMsg).toBe('Epic sadface: Username and password do not match any user in this service');
         } else {
             console.log('element is missing');
-
         }
 
     });

@@ -20,15 +20,16 @@ class LoginPage {
         await this.loginButton.click();
     }
 
-     async clearInputs() {
-        await this.usernameInput.clearValue();
-        await this.passwordInput.clearValue()
-    }
 
     async clearCredentials() {
         await this.usernameInput.clearValue();
         await this.passwordInput.clearValue();
     }
+    async getErrorMessage() {
+        await this.errorMessage.waitForDisplayed({ timeout: 5000 });
+        return this.errorMessage.getText();
+    }
+
 }
 
 export default new LoginPage();

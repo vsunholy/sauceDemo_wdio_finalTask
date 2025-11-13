@@ -57,24 +57,15 @@ describe('SauceDemo Login Tests (UC-1, UC-2, UC-3)', () => {
 
     });
 
-    it('UC-2: Should show "Password is required" when password is empty', async () => {
+it('UC-2: Should show "Password is required" when password is empty', async () => {
+    await LoginPage.usernameInput.setValue(username);
+    await LoginPage.passwordInput.clearValue();
+    await LoginPage.loginButton.click();
 
-        await LoginPage.usernameInput.setValue(username);
-        await LoginPage.passwordInput.setValue(password);
-        await LoginPage.passwordInput.clearValue();
-        await LoginPage.loginButton.click();
+    const errorMsg = await LoginPage.getErrorMessage();
+    expect(errorMsg).toBe('Epic sadface: Password is required');
+});
 
-        await browser.pause(1000);
-        const errorExists = await LoginPage.errorMessage.isExisting();
-
-        if (errorExists) {
-            const errorMsg = await LoginPage.errorMessage.getText();
-            expect(errorMsg).toBe('Epic sadface: Username and password do not match any user in this service');
-        } else {
-            console.log('element is missing');
-        }
-
-    });
 
 
     it('UC-3: Should login successfully with valid credentials', async () => {

@@ -78,9 +78,10 @@ describe('SauceDemo Login Tests (UC-1, UC-2, UC-3)', () => {
 
     it('UC-3: Should login successfully with valid credentials', async () => {
 
-        await LoginPage.login(validUsers[0], validUsers[1]);
+        await LoginPage.login(process.env.USERNAME, process.env.PASSWORD);;
         const isInventoryPageDisplayed = await InventoryPage.isPageDisplayed();
         expect(isInventoryPageDisplayed).toBe('Swag Labs');
+
     });
 
 });

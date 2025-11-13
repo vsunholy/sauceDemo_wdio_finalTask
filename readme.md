@@ -7,7 +7,7 @@ This project automates **UC-1, UC-2, UC-3** test cases on https://www.saucedemo.
 - **Browsers**: Chrome + Edge (parallel execution)  
 - **Locators**: XPath only  
 - **Pattern**: Page Object Model    
-- **Logging**: WDIO native + Allure Reporter  
+- **Logging**: WDIO native Logger + Allure Reporter  
 - **Parametrization**: Data Provider   
 - **Headless mode** for CI/CD readiness  
 

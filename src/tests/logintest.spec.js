@@ -30,7 +30,9 @@
 
 import { browser, expect } from '@wdio/globals';
 import { LoginPage, InventoryPage } from '../po';
-// import { validUsers } from '../data';
+
+const username = process.env.USERNAME;
+const password = process.env.PASSWORD;
 
 
 
@@ -57,8 +59,8 @@ describe('SauceDemo Login Tests (UC-1, UC-2, UC-3)', () => {
 
     it('UC-2: Should show "Password is required" when password is empty', async () => {
 
-        await LoginPage.usernameInput.setValue(process.env.USERNAME);
-        await LoginPage.passwordInput.setValue(process.env.PASSWORD);
+        await LoginPage.usernameInput.setValue(username);
+        await LoginPage.passwordInput.setValue(password);
         await LoginPage.passwordInput.clearValue();
         await LoginPage.loginButton.click();
 
@@ -77,7 +79,7 @@ describe('SauceDemo Login Tests (UC-1, UC-2, UC-3)', () => {
 
     it('UC-3: Should login successfully with valid credentials', async () => {
 
-        await LoginPage.login(process.env.USERNAME, process.env.PASSWORD);;
+        await LoginPage.login(username, password);;
         const isInventoryPageDisplayed = await InventoryPage.isPageDisplayed();
         expect(isInventoryPageDisplayed).toBe('Swag Labs');
 

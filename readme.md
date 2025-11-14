@@ -10,6 +10,7 @@ This project automates **UC-1, UC-2, UC-3** test cases on https://www.saucedemo.
 - **Logging**: WDIO native Logger + Allure Reporter  
 - **Parametrization**: Data Provider   
 - **Headless mode** for CI/CD readiness  
+- **Github Actions** for CI/CD 
 
 ## Test Cases Covered
 

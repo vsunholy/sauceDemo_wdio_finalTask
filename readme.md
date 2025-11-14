@@ -28,7 +28,7 @@ cd  repo name
 npm install
 
 # 2. Run tests in parallel (Chrome + Edge)
-npm test
+npm run wdio
 
 # 3. Generate & open Allure report
-npm run report
+allure generate [allure_output_dir] && allure open

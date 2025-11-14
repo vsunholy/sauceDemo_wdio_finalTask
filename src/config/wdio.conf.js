@@ -1,11 +1,21 @@
 import logger from '@wdio/logger';
-const log = logger('wdio')
-const path = require('path');
-require('dotenv').config({
-  path: path.resolve(__dirname, '../../.env'),
+import { config as dotenvConfig } from 'dotenv';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const log = logger('wdio');
+
+// Get __dirname equivalent in ES6 modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Load environment variables
+dotenvConfig({
+  path: resolve(__dirname, '../../.env'),
   override: true,
 });
-exports.config = {
+
+export const config = {
   //
   // ====================
   // Runner Configuration
